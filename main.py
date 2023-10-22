@@ -47,7 +47,14 @@ img_file = st.file_uploader('이미지를 업로드 하세요.', type=['png', 'j
 # 이미지 파일 객체에서 이미지 데이터를 읽어옴
 if img_file is not None:
     image_bytes = img_file.read()
-    
+    progress_text = "Operation in progress. Please wait."
+    my_bar = st.progress(0, text=progress_text)
+
+    for percent_complete in range(100):
+        time.sleep(0.01)
+        my_bar.progress(percent_complete + 1, text=progress_text)
+        time.sleep(1)
+    my_bar.empty()
     if not os.path.exists(MODEL_PATH):
             with requests.get(MODEL_URL, stream=True) as r:
                 r.raise_for_status()
