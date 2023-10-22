@@ -47,7 +47,7 @@ img_file = st.file_uploader('이미지를 업로드 하세요.', type=['png', 'j
 # 이미지 파일 객체에서 이미지 데이터를 읽어옴
 if img_file is not None:
     image_bytes = img_file.read()
-    progress_text = "Operation in progress. Please wait."
+    progress_text = "인공지능이 돌아가고있습니다.."
     my_bar = st.progress(0, text=progress_text)
 
     for percent_complete in range(100):

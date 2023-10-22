@@ -208,6 +208,7 @@ numexpr @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_76
 numpy==1.26.0
 numpydoc @ file:///Users/cbousseau/work/recipes/ci_py311/numpydoc_1677960919550/work
 oauthlib==3.2.2
+opencv-python==4.8.1.78
 openpyxl==3.0.10
 opt-einsum==3.3.0
 packaging @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_e946luvhc3/croot/packaging_1678965323926/work
@@ -342,6 +343,7 @@ tensorboard==2.14.1
 tensorboard-data-server==0.7.1
 tensorflow==2.14.0
 tensorflow-estimator==2.14.0
+tensorflow-hub==0.15.0
 tensorflow-io-gcs-filesystem==0.34.0
 tensorflow-macos==2.14.0
 termcolor==2.3.0
