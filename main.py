@@ -29,7 +29,7 @@ def reshapeImg(image_bytes):
     image = Image.open(io.BytesIO(image_bytes))
     
     # 이미지 크기를 (160, 160)으로 조정
-    resized_img = cv2.resize(np.array(image), (160, 160))
+    resized_img = cv2.resize(np.array(image), (64, 64))
     resized_img = np.expand_dims(resized_img, axis=0)  # 배치 차원을 추가하여 (1, 160, 160, 3) 형태로 변환
     
     # 이미지 데이터를 0과 1 사이의 값으로 정규화
@@ -51,9 +51,7 @@ if img_file is not None:
     my_bar = st.progress(0, text=progress_text)
 
     for percent_complete in range(100):
-        time.sleep(0.01)
         my_bar.progress(percent_complete + 1, text=progress_text)
-        time.sleep(1)
     my_bar.empty()
     if not os.path.exists(MODEL_PATH):
             with requests.get(MODEL_URL, stream=True) as r:
@@ -66,10 +64,10 @@ if img_file is not None:
             model = tf.keras.models.load_model(MODEL_PATH)
     prediction = model.predict(reshapeImg(image_bytes))
     print(prediction)
-    if prediction[0][0] > prediction[0][1]:
-        st.write('예측 결과: 개')
+    if prediction[0][0] < prediction[0][1]:
+        st.write('예측 결과: 고양이')
     else:
-         st.write('예측 결과 : 고양이')
+         st.write('예측 결과 : 개')
 else:
     st.subheader('어서 올려보세요!')
 
