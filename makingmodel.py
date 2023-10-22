@@ -15,7 +15,8 @@ from PIL import Image
 import numpy as np
 
 # 데이터 폴더 경로 설정
-data_folder = 'drive/MyDrive/dataset/'  # 각 클래스 폴더가 포함된 상위 폴더 경로
+data_folder = 'drive/MyDrive/dataset/'  
+# 각 클래스 폴더가 포함된 상위 폴더 경로
 
 # 이미지 파일들을 저장할 리스트
 train_images = []
